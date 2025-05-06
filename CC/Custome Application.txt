@@ -1,0 +1,144 @@
+1. Setup Salesforce Developer Org
+Sign up at: https://developer.salesforce.com/signup
+
+2. Custom Objects & Fields
+📘 Student
+Full Name (Text)
+
+Email (Email)
+
+Phone (Phone)
+
+Enrollment Date (Date)
+
+Program (Picklist: BSc, BTech, MSc, etc.)
+
+📘 Course
+Course Name (Text)
+
+Course Code (Text)
+
+Description (Long Text)
+
+📘 Enrollment
+Student (Lookup → Student)
+
+Course (Lookup → Course)
+
+Enrollment Date (Date)
+
+📘 Attendance
+Student (Lookup → Student)
+
+Course (Lookup → Course)
+
+Date (Date)
+
+Status (Picklist: Present, Absent)
+
+📘 Grade
+Student (Lookup → Student)
+
+Course (Lookup → Course)
+
+Score (Number)
+
+Grade (Formula/Text)
+
+3. Relationships
+Student ↔ Enrollment (1:N)
+
+Course ↔ Enrollment (1:N)
+
+Student ↔ Attendance (1:N)
+
+Course ↔ Attendance (1:N)
+
+4. UI: Lightning App Builder
+Create a new Lightning App: “Student Management System”
+
+Tabs:
+
+Students
+
+Courses
+
+Enrollments
+
+Attendance
+
+Grades
+
+5. Automation: Flow Examples
+Auto-create Enrollment Record when student is added to a course
+
+Auto-email to student on grade update
+
+Approval flow for course withdrawal
+
+6. Security & Access Control
+Profiles:
+
+Admin: Full access
+
+Faculty: Can update grades and attendance
+
+Student: Read-only access to their profile (via Community if needed)
+
+7. Reports & Dashboards
+Student performance dashboard
+
+Attendance report per course
+
+Course enrollment trends
+
+🧪 Bonus: Optional Add-ons
+Use Experience Cloud to create a student portal
+
+Use Chatter for faculty-student communication
+
+Integrate Google Calendar for course schedules
+
+✅ Final Deliverables
+Custom Lightning App: Student Management System
+
+Data model with 5 custom objects
+
+Flows for automation
+
+Dashboards for Admin/Faculty
+
+Role-based access
+
+Would you like me to create an ERD diagram or sample Flow design for any part of this system?
+
+You said:
+whta is the formula for grade
+ChatGPT said:
+The formula for grade in your Salesforce Grade object can be implemented using a Formula field based on the numeric Score field. Here's a common grading scale example:
+
+🎓 Formula for Grade (Letter Based)
+Assume you have a custom field:
+
+Score__c (Number, 0–100)
+
+Then create a Formula Field called Grade__c (Text) with this formula:
+
+java
+Copy
+Edit
+IF(Score__c >= 90, "A",
+IF(Score__c >= 80, "B",
+IF(Score__c >= 70, "C",
+IF(Score__c >= 60, "D",
+"F"))))
+🧠 Explanation:
+A: 90–100
+
+B: 80–89
+
+C: 70–79
+
+D: 60–69
+
+F: Below 60

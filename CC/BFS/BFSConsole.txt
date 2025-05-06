@@ -1,0 +1,9 @@
+Map<String, List<String>> graph = new Map<String, List<String>>();
+graph.put('A', new List<String>{'B', 'C'});
+graph.put('B', new List<String>{'D', 'E'});
+graph.put('C', new List<String>{'F'});
+graph.put('D', new List<String>());
+graph.put('E', new List<String>());
+graph.put('F', new List<String>());
+
+GraphBFS.bfs(graph, 'A');

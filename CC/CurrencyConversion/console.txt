@@ -1,0 +1,5 @@
+CurrencyConverter.convertINRtoUSD(1000); // 1000 INR to USD
+CurrencyConverter.convertUSDtoINR(50);    // 50 USD to INR
+
+CurrencyConverter.convertINRtoEUR(1000); // 1000 INR to EUR
+CurrencyConverter.convertEURtoINR(20);   // 20 EUR to INR

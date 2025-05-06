@@ -1,0 +1,2 @@
+TemperatureConversion.convertCelsiusToFahrenheit(25);  // Convert 25°C to Fahrenheit
+TemperatureConversion.convertFahrenheitToCelsius(77);  // Convert 77°F to Celsius
